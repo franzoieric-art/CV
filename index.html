@@ -84,6 +84,75 @@
         .status-strip {
             font-family: 'JetBrains Mono', monospace;
             letter-spacing: 0.05em;
+            display: inline-grid;
+            grid-template-columns: repeat(3, auto);
+            align-items: stretch;
+        }
+
+        .status-strip > span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.55rem 1rem;
+            white-space: nowrap;
+        }
+
+        .status-strip > span + span {
+            border-left: 1px solid #2E353C;
+        }
+
+        .hero-scale-line {
+            white-space: nowrap;
+        }
+
+        @media (max-width: 640px) {
+            #hero {
+                padding-top: 3.25rem;
+                padding-bottom: 4.5rem;
+            }
+
+            #hero h1 {
+                font-size: clamp(2.35rem, 10.8vw, 3.15rem);
+                line-height: 0.98;
+                letter-spacing: -0.02em;
+            }
+
+            .hero-scale-line {
+                font-size: 0.9em;
+            }
+
+            #hero .status-strip {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                width: 100%;
+                letter-spacing: 0.035em;
+            }
+
+            #hero .status-strip > span {
+                padding: 0.9rem 0.7rem;
+                font-size: 0.68rem;
+            }
+
+            #hero .status-strip > span + span {
+                border-left: 0;
+            }
+
+            #hero .status-strip > span:nth-child(2) {
+                border-left: 1px solid #2E353C;
+            }
+
+            #hero .status-strip > span:nth-child(3) {
+                grid-column: 1 / -1;
+                border-top: 1px solid #2E353C;
+            }
+
+            #hero .hero-intro {
+                text-align: left;
+                line-height: 1.72;
+                max-width: 36rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
 
         .timeline-line {
@@ -143,19 +212,19 @@
                 </div>
 
                 <div class="text-center md:text-left">
-                    <p class="font-mono text-xs text-ops-brass uppercase tracking-[0.2em] mb-3">Desenvolvimento · Inteligência Artificial · Comércio Digital</p>
+                    <p class="font-mono text-xs text-ops-brass uppercase tracking-[0.2em] mb-3">Desenvolvimento · IA · E-commerce</p>
                     <h1 class="font-display text-4xl md:text-6xl uppercase leading-tight mb-5">
-                        Produto, tecnologia e execução,<br>da ideia à escala.
+                        Produto, tecnologia e execução,<br><span class="hero-scale-line">da ideia à escala.</span>
                     </h1>
 
-                    <div class="status-strip inline-flex flex-wrap gap-x-4 gap-y-2 text-xs text-ops-muted border border-ops-border bg-ops-surface px-4 py-2 rounded-sm mb-6">
-                        <span class="text-ops-text">PRODUTOS · AUTOMAÇÃO · EXECUÇÃO</span>
-                        <span class="border-l border-ops-border pl-4">DESENVOLVIMENTO</span>
-                        <span class="border-l border-ops-border pl-4 text-ops-brass">IA · E-COMMERCE</span>
+                    <div class="status-strip text-xs text-ops-muted border border-ops-border bg-ops-surface rounded-sm mb-6">
+                        <span class="text-ops-text">FULL STACK</span>
+                        <span>IA · E-COMMERCE</span>
+                        <span class="text-ops-brass">15.000+ VENDAS</span>
                     </div>
 
-                    <p class="text-base md:text-lg text-ops-text/90 max-w-2xl leading-relaxed">
-                        Sou Eric. Desenvolvo produtos digitais, integrações com inteligência artificial e operações de e-commerce — unindo código, automação e experiência prática em uma trajetória que já ultrapassou <strong>15.000 vendas</strong>.
+                    <p class="hero-intro text-base md:text-lg text-ops-text/90 max-w-2xl leading-relaxed">
+                        Sou Eric. Desenvolvo produtos digitais e operações de e-commerce, combinando código, automação e inteligência artificial para transformar ideias em produtos reais.
                     </p>
                 </div>
             </div>
